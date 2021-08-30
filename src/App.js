@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+ // !!! You don't need to import React in version over 17. of React
+import Navbar from './Navbar';
+import Home from './Home'
 
+// Component is a function.
+// Functions have to start with capital letter.
 function App() {
   return (
+    // This is not HTML it's JSX.
+    // in JSX we use camelCase and HTML class is equal to className in JSX.
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="content">
+        <Home/>
+      </div>
     </div>
   );
 }
 
+// Always export component function to use it in other files.
 export default App;
