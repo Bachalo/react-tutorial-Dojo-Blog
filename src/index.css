@@ -79,3 +79,29 @@
 .blog-details-body {
   font-size: 16px;
 }
+
+.create {
+  max-width: 400px;
+  margin: 0;
+  text-align: center;
+}
+
+.create input, .create textarea, .create select {
+  margin: 10px 0px;
+  box-sizing: border-box;
+  display: block;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #cfcfcf;
+}
+
+.create button, .blog-details button {
+  background-color: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 20px 0px;
+  font-size: 1rem;
+}
