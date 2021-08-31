@@ -1,24 +1,37 @@
-import { useState } from "react";
 import BlogList from "./BlogList";
-
+import useFetch from "./useFetch";
 const Home = () => {
-    const [ blogs, setBlogs ] = useState([
-        { title: "My new website", body: "lorem ipsum...", author: 'mario', id: 1 },
-        { title: "Welcome party", body: "lorem ipsum...", author: 'luigi', id: 2 },
-        { title: "Dev tools!", body: "lorem ipsum...", author: 'turtle', id: 3 },
-    ]);
+    const { data, isLoading, error } = useFetch("http://localhost:8000/blogs");
+    // const [name, setName] = useState('mario');
 
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter((blog) => blog.id !== id);
-        setBlogs(newBlogs);
-    }
+    /* 
+        NOTE
+
+        useEffect runs when rendering component
+        useEffect(function, dependencies);
+        useEffect(() => {
+            console.log('useEffect run')
+        }, [name]);
+        Now useEffect will run on initial render and if the name value changes.
+        This empty [] makes useEffect run only after the initial render.
+        These are useEffect dependencies. 
+    */
+
+
+    // NOTE you can't use async in initial useEffect function.
+    
 
     return ( 
     <div className="home">
-        <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete} />
+        {/* Conditional checks 
+        Fixes the error blogs is null
+        check if stuff on the left is true  if it is it outputs stuff on the right */}
+        { error && <div>{ error }</div> }
+        { isLoading && <div>Loading ...</div> }
+        { data && <BlogList blogs={data} title="All blogs" />}
         {/* Similar to .map loops through elements in array and
-         if it returns false it doesn't include it in array on return */}
-        <BlogList blogs={blogs.filter((blog) => blog.author === 'luigi')} title="Luigi blogs"  handleDelete={handleDelete}  />
+         if it returns false it doesn't include it in array on return
+        <BlogList blogs={blogs.filter((blog) => blog.author === 'luigi')} title="Luigi blogs"  handleDelete={handleDelete}  /> */}
     </div>
     ); 
 }

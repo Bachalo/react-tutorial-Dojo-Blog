@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+## JSON server endpoint
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 'npx json-server --watch data/db.json --port 8000'
+
+/blogs          GET         Fetch all data
+
+/blogs/{id}     GET         Fetch single article
+
+/blogs          POST        Add new article
+
+/blogs/{id}     DELETE      Delete an article
 
 ## Available Scripts
 
