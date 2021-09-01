@@ -20,7 +20,7 @@ In the project directory, you can run:
 ### `npx json-server --watch data/db.json --port 8000`
 
 Starts api.
-Open http://localhost:8000](http://localhost:8000) to access the endpoints.
+Open [http://localhost:8000](http://localhost:8000) to access the endpoints.
 
 ### `npm start`
 
