@@ -1,0 +1,27 @@
+.NotificationWrapper {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.NotificationItem {
+    padding: 0px;
+    height: 100px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-color: #f2f2f2;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.bar {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: rgb(137, 202, 39);
+    bottom: 0px;
+    margin-top: 40px;
+}

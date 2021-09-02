@@ -33,7 +33,7 @@ const useFetch = (url) => {
                         setIsLoading(false);
                     }
                 })
-            ,300);
+            ,0);
 
       return () => abortController.abort();
     }, [url]);

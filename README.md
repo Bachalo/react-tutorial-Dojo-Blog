@@ -1,3 +1,8 @@
+# Simple blogging application
+
+Currently working on:
+- Notification system
+
 ## JSON server endpoint
 
 ### 'npx json-server --watch data/db.json --port 8000'

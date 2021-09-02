@@ -5,15 +5,23 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
+import { motion } from 'framer-motion';
 
 // Component is a function.
 // Functions have to start with capital letter.
 function App() {
+
+  const variant = {
+    initial: { opacity: 0, y: -50 },
+    animate: { opacity: 1, y: 0 },
+  } 
+
   return (
+    
     // This is not HTML it's JSX.
     // in JSX we use camelCase and HTML class is equal to className in JSX.
     <Router>
-      <div className="App">
+      <motion.div className="App" initial="initial" animate="animate" variants={variant}>
         <Navbar />
         <div className="content" >
           <Switch>
@@ -32,7 +40,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-      </div>
+      </motion.div>
     </Router>
   );
 }
